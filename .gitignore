@@ -1,0 +1,14 @@
+# Environment variables and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Keep examples tracked
+!.env.example
+!**/.env.example
+
+# Node / build artifacts
+**/node_modules/
+**/dist/
+**/.DS_Store
