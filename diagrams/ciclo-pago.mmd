@@ -1,0 +1,6 @@
+stateDiagram-v2
+  [*] --> PENDING: registrar_pago
+  PENDING --> PAID: marcar_pagado
+  PENDING --> FAILED: marcar_fallido
+  PAID --> [*]
+  FAILED --> [*]

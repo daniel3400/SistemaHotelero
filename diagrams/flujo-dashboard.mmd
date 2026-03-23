@@ -1,0 +1,9 @@
+flowchart TD
+  FE[Dashboard UI] --> API[GET /dashboard/summary]
+  API --> R1[Rooms Repository]
+  API --> S1[Stays Repository]
+  API --> P1[Payments Repository]
+  R1 --> DB[(PostgreSQL)]
+  S1 --> DB
+  P1 --> DB
+  API --> FE

@@ -1,0 +1,20 @@
+flowchart LR
+  subgraph Cliente
+    FE[Frontend React]
+  end
+
+  subgraph Backend
+    API[API Express]
+    AUTH[Modulo Auth JWT]
+    CQRS[Aplicacion CQRS]
+    DOM[Dominio DDD]
+  end
+
+  DB[(PostgreSQL / Supabase)]
+
+  FE -->|HTTPS| API
+  API --> AUTH
+  API --> CQRS
+  CQRS --> DOM
+  CQRS --> DB
+  AUTH --> DB

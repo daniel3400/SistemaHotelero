@@ -1,0 +1,9 @@
+flowchart LR
+  UI[UI / Cliente] -->|Comando| CMD[Command Handler]
+  CMD --> DOM[Entidad / Agregado]
+  CMD --> REP[Repositorio]
+  REP --> DB[(PostgreSQL)]
+
+  UI -->|Consulta| QRY[Query Handler]
+  QRY --> REPQ[Repositorio Lectura]
+  REPQ --> DB

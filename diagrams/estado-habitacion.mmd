@@ -1,0 +1,9 @@
+stateDiagram-v2
+  [*] --> AVAILABLE
+  AVAILABLE --> OCCUPIED: ocupar()
+  AVAILABLE --> CLEANING_PENDING: solicitar_aseo()
+  CLEANING_PENDING --> AVAILABLE: marcar_limpia()
+  OCCUPIED --> CLEANING_PENDING: solicitar_aseo()
+  OCCUPIED --> AVAILABLE: checkout()
+  AVAILABLE --> DISABLED: deshabilitar()
+  DISABLED --> AVAILABLE: habilitar()

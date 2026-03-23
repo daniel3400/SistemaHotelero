@@ -1,0 +1,6 @@
+stateDiagram-v2
+  [*] --> ACTIVE: crear_estancia
+  ACTIVE --> COMPLETED: completar_estancia
+  ACTIVE --> CANCELLED: cancelar_estancia
+  COMPLETED --> [*]
+  CANCELLED --> [*]

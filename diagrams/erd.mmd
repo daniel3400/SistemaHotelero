@@ -1,0 +1,58 @@
+erDiagram
+  HOTEL ||--o{ ROOM : tiene
+  ROOM ||--o{ STAY : asigna
+  GUEST ||--o{ STAY : realiza
+  STAY ||--o{ PAYMENT : genera
+
+  HOTEL {
+    text id
+    text name
+    text address
+    text phone
+    text status
+    timestamp created_at
+  }
+
+  ROOM {
+    text id
+    text hotel_id
+    text room_number
+    jsonb beds
+    int max_guests
+    boolean has_decoder
+    text status
+    boolean daily_cleaning_requested
+    boolean requires_cleaning
+    timestamp created_at
+  }
+
+  GUEST {
+    text id
+    text full_name
+    text document_number
+    text phone
+    timestamp created_at
+  }
+
+  STAY {
+    text id
+    text room_id
+    text guest_id
+    timestamp check_in_date
+    timestamp expected_check_out_date
+    timestamp actual_check_out_date
+    int number_of_guests
+    numeric price_per_night
+    numeric discount
+    numeric total_amount
+    text status
+  }
+
+  PAYMENT {
+    text id
+    text stay_id
+    numeric amount
+    text method
+    text status
+    timestamp created_at
+  }

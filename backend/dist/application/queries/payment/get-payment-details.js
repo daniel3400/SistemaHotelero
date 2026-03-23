@@ -1,0 +1,13 @@
+import { NotFoundError } from "../../../shared/errors/not-found-error.js";
+export class GetPaymentDetails {
+    paymentRepository;
+    constructor(paymentRepository) {
+        this.paymentRepository = paymentRepository;
+    }
+    async execute(id) {
+        const payment = await this.paymentRepository.getById(id);
+        if (!payment)
+            throw new NotFoundError("Pago no encontrado.");
+        return payment.info;
+    }
+}
